@@ -6,11 +6,8 @@ A full-stack application that serves my professional profile—including skills,
 
 ## 🌐 Live Demo
 
-**Frontend URL:** [Your Frontend Deployment Link]  
-**API Base URL:** [Your Backend Deployment Link]
-
-📸 **Project Preview**  
-*(Add a screenshot or GIF of your running application here)*
+**Frontend URL:**  https://startling-dasik-e35a26.netlify.app/
+**API Base URL:**  https://api-playground-ll3h.onrender.com
 
 ---
 
