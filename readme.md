@@ -7,7 +7,8 @@ A full-stack application that serves my professional profile—including skills,
 ## 🌐 Live Demo
 
 **Frontend URL:**  https://startling-dasik-e35a26.netlify.app/
-**API Base URL:**  https://api-playground-ll3h.onrender.com
+
+**API Base URL:**  https://aaditya01prabhakar.pythonanywhere.com/
 
 ---
 
