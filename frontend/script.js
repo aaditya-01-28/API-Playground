@@ -1,5 +1,5 @@
 // The base URL of your running backend
-const API_BASE_URL = 'http://aaditya01prabhakar.pythonanywhere.com'; 
+const API_BASE_URL = 'https://api-playground-ll3h.onrender.com'; 
 
 const profileSection = document.getElementById('profile');
 const projectsList = document.getElementById('projects-list');
