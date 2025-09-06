@@ -50,7 +50,7 @@ Follow these instructions to get the project up and running on your local machin
 ### **1. Clone & Setup**
 ```bash
 # Clone the repository
-git clone [https://github.com/yourusername/api-playground.git](https://github.com/aaditya-01-28/api-playground.git)
+git clone https://github.com/aaditya-01-28/api-playground.git
 
 # Navigate to the project directory
 cd api-playground/backend
@@ -96,7 +96,7 @@ GET	/profile	Retrieves the main profile and contact information.
 Export to Sheets
 /profile Response Body
 ```bash
-
+JSON
 {
     "name": "AADITYA PRABHAKAR",
     "email": "aadityaprabhakar01@gmail.com",
@@ -126,8 +126,8 @@ Export to Sheets
 # ☁️ Deployment
 This project is deployed with a decoupled, multi-cloud architecture:
 
-The static frontend is hosted on Netlify.
+* The static frontend is hosted on Netlify.
 
-The Flask backend is hosted as a Web Service on Render.
+* The Flask backend is hosted as a Web Service on Render.
 
-The PostgreSQL database is hosted on Neon and connected to the Render backend via an environment variable.
+* The PostgreSQL database is hosted on Neon and connected to the Render backend via an environment variable.
