@@ -1,7 +1,5 @@
-// The base URL of your running backend
 const API_BASE_URL = 'https://api-playground-ll3h.onrender.com'; 
 
-const profileSection = document.getElementById('profile');
 const projectsList = document.getElementById('projects-list');
 const searchInput = document.getElementById('skill-search');
 
@@ -34,16 +32,54 @@ async function fetchProjects(skill = '') {
 // --- Functions to render data into HTML ---
 
 function displayProfile(profile) {
-    profileSection.innerHTML = `
+    // --- Existing profile section ---
+    document.getElementById('profile').innerHTML = `
         <h2>${profile.name}</h2>
-        <p><strong>Email:</strong> ${profile.email}</p>
-        <p><strong>Education:</strong> ${profile.education}</p>
+        <p><strong>Email:</strong> ${profile.email} | <strong>Education:</strong> ${profile.education}</p>
         <div class="links">
             <a href="${profile.links.github}" target="_blank">GitHub</a> | 
             <a href="${profile.links.linkedin}" target="_blank">LinkedIn</a> | 
             <a href="${profile.links.portfolio}" target="_blank">Portfolio</a>
         </div>
     `;
+
+    // --- NEW SECTIONS ---
+    // Summary
+    document.getElementById('summary').innerHTML = `
+        <h2>Summary</h2>
+        <p>${profile.summary}</p>
+    `;
+
+    // Internship
+    if (profile.internship) {
+        document.getElementById('internship').innerHTML = `
+            <h2>Internship</h2>
+            <div class="project-card">
+                <h3>${profile.internship.organization}</h3>
+                <p><strong>${profile.internship.duration}</strong></p>
+                <p>${profile.internship.details}</p>
+            </div>
+        `;
+    }
+    
+    // Technical Skills
+    if (profile.technical_skills) {
+        let skillsHtml = '<h2>Technical Skills</h2>';
+        for (const category in profile.technical_skills) {
+            skillsHtml += `<p><strong>${category}:</strong> ${profile.technical_skills[category]}</p>`;
+        }
+        document.getElementById('tech-skills').innerHTML = skillsHtml;
+    }
+
+    // Achievements
+    if (profile.achievements) {
+        let achievementsHtml = '<h2>Achievements</h2><ul>';
+        profile.achievements.forEach(ach => {
+            achievementsHtml += `<li>${ach}</li>`;
+        });
+        achievementsHtml += '</ul>';
+        document.getElementById('achievements').innerHTML = achievementsHtml;
+    }
 }
 
 function displayProjects(projects) {
@@ -64,7 +100,6 @@ function displayProjects(projects) {
 }
 
 // --- Event Listeners ---
-
 searchInput.addEventListener('input', (e) => {
     fetchProjects(e.target.value);
 });

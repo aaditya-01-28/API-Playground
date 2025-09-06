@@ -17,6 +17,11 @@ class Profile(db.Model):
     github_link = db.Column(db.String(200))
     linkedin_link = db.Column(db.String(200))
     portfolio_link = db.Column(db.String(200))
+    # --- ADD THE NEW FIELDS BELOW ---
+    summary = db.Column(db.Text)
+    technical_skills = db.Column(JSON)
+    internship = db.Column(JSON)
+    achievements = db.Column(JSON)
 
 class Skill(db.Model):
     id = db.Column(db.Integer, primary_key=True)

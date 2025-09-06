@@ -22,23 +22,9 @@ def health_check():
     """Liveness probe."""
     return jsonify({"status": "healthy"}), 200
 
-@app.route('/profile', methods=['GET', 'POST'])
+@app.route('/profile', methods=['GET'])
 def handle_profile():
-    """Read or create the main profile."""
-    if request.method == 'POST':
-        data = request.json
-        new_profile = Profile(
-            name=data['name'],
-            email=data['email'],
-            education=data.get('education'),
-            github_link=data.get('links', {}).get('github'),
-            linkedin_link=data.get('links', {}).get('linkedin'),
-            portfolio_link=data.get('links', {}).get('portfolio')
-        )
-        db.session.add(new_profile)
-        db.session.commit()
-        return jsonify({"message": "Profile created"}), 201
-
+    """Read the main profile."""
     profile = Profile.query.first()
     if not profile:
         return jsonify({"message": "Profile not found"}), 404
@@ -51,7 +37,12 @@ def handle_profile():
             "github": profile.github_link,
             "linkedin": profile.linkedin_link,
             "portfolio": profile.portfolio_link
-        }
+        },
+        # --- ADD THE NEW DATA TO THE RESPONSE ---
+        "summary": profile.summary,
+        "technical_skills": profile.technical_skills,
+        "internship": profile.internship,
+        "achievements": profile.achievements
     })
 
 @app.route('/projects', methods=['GET'])
