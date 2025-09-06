@@ -5,9 +5,9 @@
 A full-stack application that serves my professional profile—including a personal summary, skills, internship experience, achievements, and projects—through a RESTful API with a clean, interactive frontend.
 
 ### **Live Demo**
-* **Frontend URL:** `https://startling-dasik-e35a26.netlify.app/`
-* **API Base URL:** `https://aaditya01prabhakar.pythonanywhere.com/`
-* **Resume URL:**   `https://drive.google.com/file/d/1cqSnVINUI3nEt82CNWVxwXCEVpMF6U3I/view?usp=sharing`
+* **Frontend URL:**  https://startling-dasik-e35a26.netlify.app/
+* **API Base URL:**  https://aaditya01prabhakar.pythonanywhere.com/
+* **Resume URL:**    https://drive.google.com/file/d/1cqSnVINUI3nEt82CNWVxwXCEVpMF6U3I/view?usp=sharing
 
 ---
 
