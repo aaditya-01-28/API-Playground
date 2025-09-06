@@ -4,3 +4,4 @@ Flask-CORS
 PyMySQL
 python-dotenv
 gunicorn 
+psycopg2
